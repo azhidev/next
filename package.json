@@ -10,12 +10,19 @@
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.4",
     "@moxy/next-layout": "^2.2.3",
     "axios": "^1.6.3",
+    "framer-motion": "^11.1.7",
+    "jwt-decode": "^4.0.0",
     "next": "14.0.4",
+    "next-nprogress-bar": "^2.3.11",
     "next-query-params": "^5.0.0",
     "react": "^18",
     "react-dom": "^18",
-    "swr": "^2.2.4"
+    "react-icons": "^5.2.0",
+    "react-resizable": "^3.0.5",
+    "swr": "^2.2.4",
+    "use-query-params": "^2.2.1"
   }
 }
