@@ -1,0 +1,4 @@
+next js
+chakra ui
+react hook form
+SWR and axios
