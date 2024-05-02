@@ -104,7 +104,7 @@ const Layout = ({ children }) => {
 
   return (
     <Box height={'100vh'} dir='rtl'>
-      <Flex as="header" height={'60px'} borderBottom={'1px'} p="2" justifyContent="space-between" alignItems="center">
+      <Flex as="header" height={'60px'} borderBottom={'1px'} borderColor={'gray.300'}  p="2" justifyContent="space-between" alignItems="center">
         <HStack>
           <IconButton
             fontWeight={'800'}
@@ -134,23 +134,9 @@ const Layout = ({ children }) => {
           <IconButton variant={"ghost"} fontSize={"30px"} icon={<ImExit />} onClick={exitHandler} />
         </HStack>
       </Flex>
-
-      {/* <Progress
-        dir='ltr'
-        position="absolute"
-        top={'58px'}
-        left={0}
-        width="100%"
-        height="2px"
-        hasStripe={false}
-        value={progress}
-        size="xs"
-        colorScheme="blue"
-      /> */}
-
       <Flex overflowY={'auto'} sx={{ '::-webkit-scrollbar': { display: 'none' }, 'scrollbar-width': 'none', '-ms-overflow-style': 'none' }} height={"calc(100vh - 60px)"} >
         <ResizableBox style={{ transition: 'width 0.2s ease' }} width={sidebarOpen ? 200 : 60} minConstraints={[50, 300]} maxConstraints={[300, 300]}>
-          <Stack gap={0} minH={'100%'} borderLeft={'1px'} borderColor={'gray.200'}>
+          <Stack position={'fixed'} gap={0} minH={'100%'} borderLeft={'1px'} borderColor={'gray.300'}>
             {renderNavItems()}
           </Stack>
         </ResizableBox>
