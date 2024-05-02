@@ -23,9 +23,9 @@ export default function App({ Component, pageProps }) {
             <Fonts />
             <LayoutTree Component={Component} pageProps={pageProps} />
             <ProgressBar
-              height="3px"
-              color="#fffd00"
-              options={{ showSpinner: true }}
+              height="2.5px"
+              color="#5941A9"
+              options={{ showSpinner: false }}
               shallowRouting
             />
           </SidebarProvider>

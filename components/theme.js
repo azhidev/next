@@ -6,6 +6,6 @@ export const theme = extendTheme({
   direction: "rtl",
   config: {
     initialColorMode: 'light',
-    useSystemColorMode: false, // set to true to use the system color mode
+    useSystemColorMode: true, // set to true to use the system color mode
   },
 })
