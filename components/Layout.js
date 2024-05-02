@@ -59,7 +59,7 @@ const Layout = ({ children }) => {
         >
           <Flex align="center" p={4}>
             <Icon zIndex={2} as={item.icon} w={6} h={6} />
-            {sidebarOpen && <Text minW={'120px'} zIndex={2} ps={5} mx={'auto'}>{item.label}</Text>}
+            {sidebarOpen && <Text minW={'120px'} zIndex={2} ps={5}>{item.label}</Text>}
           </Flex>
         </Box>
         :
@@ -67,7 +67,6 @@ const Layout = ({ children }) => {
           <Box
             key={item.id}
             position="relative"
-            // backgroundColor={(router.asPath.includes(item.href) && item.href != "/" || router.asPath == item.href && item.href == "/") && 'green.100'}
             cursor="pointer"
             sx={{
               '&::before': {
@@ -87,7 +86,7 @@ const Layout = ({ children }) => {
           >
             <Flex align="center" p={4}>
               <Icon zIndex={2} as={item.icon} w={6} h={6} />
-              {sidebarOpen && <Text minW={'120px'} zIndex={2} ps={5} mx={'auto'}>{item.label}</Text>}
+              {sidebarOpen && <Text minW={'120px'} zIndex={2} ps={5}>{item.label}</Text>}
             </Flex>
           </Box>
         </Link>
@@ -134,7 +133,7 @@ const Layout = ({ children }) => {
           <IconButton variant={"ghost"} fontSize={"30px"} icon={<ImExit />} onClick={exitHandler} />
         </HStack>
       </Flex>
-      <Flex overflowY={'auto'} sx={{ '::-webkit-scrollbar': { display: 'none' }, 'scrollbar-width': 'none', '-ms-overflow-style': 'none' }} height={"calc(100vh - 60px)"} >
+      {/* <Flex overflowY={'auto'} sx={{ '::-webkit-scrollbar': { display: 'none' }, 'scrollbar-width': 'none', '-ms-overflow-style': 'none' }} height={"calc(100vh - 60px)"} >
         <ResizableBox style={{ transition: 'width 0.2s ease' }} width={sidebarOpen ? 200 : 60} minConstraints={[50, 300]} maxConstraints={[300, 300]}>
           <Stack position={'fixed'} gap={0} minH={'100%'} borderLeft={'1px'} borderColor={'gray.300'}>
             {renderNavItems()}
@@ -143,7 +142,17 @@ const Layout = ({ children }) => {
         <Container pb={10} maxW={'8xl'} >
           {children}
         </Container>
-      </Flex>
+      </Flex> */}
+      <HStack align='start'>
+        <Stack width={sidebarOpen ? '200px' : '60px'} gap={0} borderLeft={'1px'} height={"calc(100vh - 60px)"} borderColor={'gray.200'} style={{ transition: '0.3s ease' }} pos='fixed'>
+          {renderNavItems()}
+        </Stack>
+        <Stack pb={10} w={"full"} style={{ marginRight: sidebarOpen ? 200 : 60, transition: 'margin-right 0.3s ease' }} overflowY={'scroll'} sx={{ '::-webkit-scrollbar': { display: 'none' }, 'scrollbar-width': 'none', '-ms-overflow-style': 'none' }} height={"calc(100vh - 60px)"}>
+          <Stack mx='auto' maxW={{ base: '2xl', md: '4xl', xl: '6xl', '2xl': '8xl' }} w='full'>
+            {children}
+          </Stack>
+        </Stack>
+      </HStack>
     </Box>
   );
 };
