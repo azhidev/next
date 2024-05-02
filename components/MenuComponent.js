@@ -14,9 +14,10 @@ import { useColorMode } from '@chakra-ui/color-mode'
 import settings from '@/utils/settings';
 import { FaRegMoon } from "react-icons/fa";
 import { FaSun } from "react-icons/fa";
+import { RxDashboard } from "react-icons/rx";
 
 const navItems = [
-  { id: 1, label: "محصولات", icon: LiaSmsSolid, href: "/products", permissionLevel: 'regular' },
+  { id: 1, label: "محصولات", icon: RxDashboard, href: "/products", permissionLevel: 'regular' },
   { id: 2, label: "آمار", icon: FiPieChart, href: "/statistic", permissionLevel: 'regular' },
   { id: 3, label: "تنظیمات", icon: RxGear, href: "/settings", permissionLevel: 'regular' },
 ];
@@ -32,15 +33,15 @@ const HeaderMenuComponent = ({ children }) => {
   const { colorMode, toggleColorMode } = useColorMode()
 
 
-  useEffect(() => {
-    router.events.on("routeChangeStart", () => {
-      setProgress(40);
-    });
-    router.events.on("routeChangeComplete", () => {
-      setProgress(100);
-      setTimeout(() => setProgress(0), 400)
-    });
-  }, []);
+  // useEffect(() => {
+  //   router.events.on("routeChangeStart", () => {
+  //     setProgress(40);
+  //   });
+  //   router.events.on("routeChangeComplete", () => {
+  //     setProgress(100);
+  //     setTimeout(() => setProgress(0), 400)
+  //   });
+  // }, []);
 
   useEffect(() => {
     if (localStorage.getItem("access_token")) {
