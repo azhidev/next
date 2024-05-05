@@ -12,6 +12,7 @@ import { theme } from "@/components/theme";
 import { PagesProgressBar as ProgressBar } from 'next-nprogress-bar';
 
 
+
 export default function App({ Component, pageProps }) {
   setupAxios()
   return (
