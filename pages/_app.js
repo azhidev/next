@@ -11,6 +11,7 @@ import { SidebarProvider } from "@/context/SidebarContext";
 import { theme } from "@/components/theme";
 import { PagesProgressBar as ProgressBar } from 'next-nprogress-bar';
 
+
 export default function App({ Component, pageProps }) {
   setupAxios()
   return (
