@@ -5,7 +5,7 @@ const input = {}
 export const theme = extendTheme({
   direction: "rtl",
   colors: {
-    white: 'RGBA(0, 0, 0, 0.02)',
+    white: 'RGBA(0, 0, 0, 0.03)',
   },
   config: {
     initialColorMode: 'light',
